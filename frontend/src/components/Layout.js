@@ -1,0 +1,34 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { FaUserCircle, FaBell } from "react-icons/fa";
+import "./home.css";
+
+const Layout = () => {
+  return (
+    <>
+      <Navbar bg="light" expand="lg" fixed="top">
+        <Container>
+          <Navbar.Brand href="/">
+            <img
+              src="data:image/png;base64,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"
+              height="30"
+              className="d-inline-block align-top"
+              alt="Healthcare App Logo"
+            />
+          </Navbar.Brand>
+          <Nav className="ml-auto d-flex align-items-center">
+            <Nav.Link as={NavLink} to="/notifications" className="me-3">
+              <FaBell size={30} />
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/profile">
+              <FaUserCircle size={30} />
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
+  );
+};
+
+export default Layout;
